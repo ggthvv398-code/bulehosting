@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluehost</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+    background:#0b1b3a;
+    color:white;
+}
+
+/* LOGIN */
+
+#login{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(135deg,#0b1b3a,#123a7a);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap:15px;
+    z-index:999;
+}
+
+#login img{
+    width:140px;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(0,140,255,0.6);
+}
+
+#login button{
+    padding:15px 30px;
+    background:#00a2ff;
+    border:none;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:17px;
+}
+
+#main{
+    display:none;
+}
+
+/* HEADER */
+
+header{
+    text-align:center;
+    padding:20px;
+    background:#0f2d5c;
+    border-bottom:1px solid #1c3f7a;
+}
+
+header img{
+    width:120px;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background:#102f66;
+}
+
+.hero h2{
+    font-size:40px;
+}
+
+/* ABOUT */
+
+.about{
+    padding:60px;
+    text-align:center;
+    background:#0e2a55;
+    font-size:20px;
+}
+
+/* BUTTONS */
+
+.categories{
+    text-align:center;
+    padding:40px;
+}
+
+.cat-btn{
+    padding:12px 25px;
+    margin:10px;
+    background:#00a2ff;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.cat-btn:hover{
+    background:#0088dd;
+}
+
+/* PLANS */
+
+.plans{
+    display:none;
+    padding:40px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.card{
+    background:#123a7a;
+    padding:25px;
+    width:260px;
+    border-radius:10px;
+    border:1px solid #1c4fa3;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#00c3ff;
+}
+
+.card p{
+    margin:10px 0;
+}
+
+/* SHOP */
+
+.shop{
+    padding:40px;
+    text-align:center;
+    background:#0b1b3a;
+}
+
+.shop h2{
+    margin-bottom:20px;
+}
+
+.shop input,
+.shop select,
+.shop textarea{
+    width:70%;
+    padding:12px;
+    margin:8px;
+    border-radius:6px;
+    border:1px solid #1c3f7a;
+    background:#102f66;
+    color:white;
+    outline:none;
+}
+
+.shop button{
+    padding:12px 25px;
+    background:#00a2ff;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:15px;
+    font-size:17px;
+}
+
+.payment-box{
+    margin-top:30px;
+    padding:20px;
+    border-top:2px solid #00a2ff;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .shop input,
+    .shop select,
+    .shop textarea{
+        width:95%;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<div id="login">
+    <img src="https://cdn.discordapp.com/attachments/1502061441497436303/1502074637096321094/Sans_titre_105_20260507231414.png?ex=69fe6384&is=69fd1204&hm=242789e491554bae7d9736105fa8f6e7d57c2b29934bed9c3834edac022eb32d&">
+    <h1>Bluehost</h1>
+    <button onclick="enterSite()">دخول</button>
+</div>
+
+<!-- MAIN -->
+
+<div id="main">
+
+<header>
+    <img src="https://cdn.discordapp.com/attachments/1502061441497436303/1502074637096321094/Sans_titre_105_20260507231414.png?ex=69fe6384&is=69fd1204&hm=242789e491554bae7d9736105fa8f6e7d57c2b29934bed9c3834edac022eb32d&">
+</header>
+
+<section class="hero">
+    <h2>Bluehost Hosting</h2>
+</section>
+
+<section class="about">
+    <p>أفضل استضافة سيرفرات بجودة عالية 🔥</p>
+</section>
+
+<!-- CATEGORY BUTTONS -->
+
+<section class="categories">
+    <button class="cat-btn" onclick="showPlans('samp')">SAMP</button>
+    <button class="cat-btn" onclick="showPlans('bot')">DISCORD BOT</button>
+    <button class="cat-btn" onclick="showPlans('mta')">MTA</button>
+    <button class="cat-btn" onclick="showPlans('nemiro')">0784339827</button>
+</section>
+
+<!-- SAMP -->
+
+<div id="samp" class="plans">
+
+    <h2 style="text-align:center;margin-bottom:25px;">خطط SAMP</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Starter</h3>
+            <p>512MB RAM</p>
+            <p>10GB SSD</p>
+            <p>السعر: 300DA</p>
+        </div>
+
+        <div class="card">
+            <h3>Medium</h3>
+            <p>1GB RAM</p>
+            <p>20GB SSD</p>
+            <p>السعر: 600DA</p>
+        </div>
+
+        <div class="card">
+            <h3>Pro</h3>
+            <p>2GB RAM</p>
+            <p>40GB SSD</p>
+            <p>السعر: 1200DA</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- BOT -->
+
+<div id="bot" class="plans">
+
+    <h2 style="text-align:center;margin-bottom:25px;">خطط Discord Bot</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Basic Bot</h3>
+            <p>24/7 Online</p>
+            <p>512MB RAM</p>
+            <p>السعر: 250DA</p>
+        </div>
+
+        <div class="card">
+            <h3>Advanced Bot</h3>
+            <p>1GB RAM</p>
+            <p>Protection Included</p>
+            <p>السعر: 500DA</p>
+        </div>
+
+        <div class="card">
+            <h3>Ultimate Bot</h3>
+            <p>2GB RAM</p>
+            <p>High Performance</p>
+            <p>السعر: 900DA</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MTA -->
+
+<div id="mta" class="plans">
+
+    <h2 style="text-align:center;margin-bottom:25px;">خطط MTA</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>MTA Start</h3>
+            <p>1GB RAM</p>
+            <p>15GB SSD</p>
+            <p>السعر: 400DA</p>
+        </div>
+
+        <div class="card">
+            <h3>MTA Plus</h3>
+            <p>2GB RAM</p>
+            <p>30GB SSD</p>
+            <p>السعر: 800DA</p>
+        </div>
+
+        <div class="card">
+            <h3>MTA Ultra</h3>
+            <p>4GB RAM</p>
+            <p>60GB SSD</p>
+            <p>السعر: 1500DA</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SHOP -->
+
+<section class="shop">
+
+    <h2>طلب + معلومات التحويل</h2>
+
+    <input type="text" id="name" placeholder="اسمك">
+
+    <input type="email" id="email" placeholder="Email">
+
+    <input type="text" id="servername" placeholder="اسم السيرفر">
+
+    <input type="password" id="password" placeholder="كلمة السر">
+
+    <select id="type">
+        <option value="">نوع الهوست</option>
+        <option>SAMP</option>
+        <option>BOT</option>
+        <option>MTA</option>
+    </select>
+
+    <input type="text" id="plan" placeholder="البلان">
+
+    <select id="pay">
+        <option value="">طريقة الدفع</option>
+        <option>BaridiMob</option>
+        <option>CCP</option>
+        <option>Flixy</option>
+    </select>
+
+    <!-- PAYMENT -->
+
+    <div class="payment-box">
+
+        <h3>💳 معلومات التحويل</h3>
+
+        <input type="text" id="amount" placeholder="المبلغ">
+
+        <input type="text" id="hour" placeholder="الساعة">
+
+        <input type="text" id="minutes" placeholder="الدقائق">
+
+        <input type="text" id="phone" placeholder="رقم لي حولة فيه">
+
+        <input type="file" id="receipt" accept="image/*">
+
+    </div>
+
+    <button onclick="sendOrder()">إرسال</button>
+
+</section>
+
+</div>
+
+<!-- SCRIPT -->
+
+<script>
+
+function enterSite(){
+
+    document.getElementById("login").style.display = "none";
+
+    document.getElementById("main").style.display = "block";
+
+}
+
+function showPlans(type){
+
+    document.querySelectorAll(".plans").forEach(plan => {
+
+        plan.style.display = "none";
+
+    });
+
+    document.getElementById(type).style.display = "block";
+
+}
+
+function sendOrder(){
+
+    const orderWebhook = "https://discord.com/api/webhooks/1501621226182021190/zaAs9YZKczMLrm59JUGqJXnO07xocnCK2jlOI2sOOSLZJzfwORuppXmBDIA2byRhfROK";
+
+    const fileInput = document.getElementById("receipt");
+
+    const file = fileInput.files[0];
+
+    const formData = new FormData();
+
+    formData.append("content",
+
+`📦 طلب جديد
+
+👤 الاسم: ${document.getElementById("name").value}
+
+📧 Email: ${document.getElementById("email").value}
+
+🖥️ السيرفر: ${document.getElementById("servername").value}
+
+🔑 كلمة السر: ${document.getElementById("password").value}
+
+📦 النوع: ${document.getElementById("type").value}
+
+💎 البلان: ${document.getElementById("plan").value}
+
+💳 الدفع: ${document.getElementById("pay").value}
+
+💰 المبلغ: ${document.getElementById("amount").value}
+
+🕐 الساعة: ${document.getElementById("hour").value}
+
+⏱️ الدقائق: ${document.getElementById("minutes").value}
+
+📱 رقم التحويل: ${document.getElementById("phone").value}`
+
+);
+
+    if(file){
+
+        formData.append("file", file, file.name);
+
+    }
+
+    fetch(orderWebhook, {
+
+        method: "POST",
+
+        body: formData
+
+    })
+
+    .then(() => {
+
+        alert("تم إرسال الطلب ✅");
+
+    })
+
+    .catch(() => {
+
+        alert("حدث خطأ ❌");
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
